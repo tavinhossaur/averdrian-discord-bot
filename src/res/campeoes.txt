@@ -1,0 +1,9 @@
+Para proteção das respostas, as frases e os campeões não serão mostradas no repositório
+
+Se você deseja clonar o repositório, utilize o exemplo a seguir para utilizar essa lista:
+
+Nunu-e-Willump_Frase do Nunu e Willump.
+Jarvan-IV_Frase do Jarvan IV.
+Jinx_Frase da Jinx.
+
+Em nomes compostos, utilize hífen (-) no lugar dos espaços e para separar o campeão e a frase, utilize o underscore (_).
