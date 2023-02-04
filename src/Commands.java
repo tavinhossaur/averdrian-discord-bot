@@ -23,7 +23,8 @@ public class Commands extends ListenerAdapter {
     String champ; // Armazena apenas o campeão da linha do arquivo
 
     // Int
-    int randomIndex; // Armazena um valor inteiro aleatório que será utilizado como um index
+    int randomChamp; // Armazena um valor inteiro aleatório que será utilizado como um index
+    int randomFala; // Armazena um valor inteiro aleatório que será utilizado como um index
     int corPadrao = 0x8963fe;
 
     // Booleans
@@ -145,15 +146,25 @@ public class Commands extends ListenerAdapter {
             // Se o comando não está ativo
             if (!falaAtiva){
                 // Instancia um novo número inteiro aleatório para o index
-                randomIndex = new Random().nextInt(champArray.length);
+                randomChamp = new Random().nextInt(champArray.length);
+                // Instancia um novo número inteiro aleatório para definir qual das duas frases será selecionada (cara ou coroa)
+                randomFala = new Random().nextInt(99);
+                
+                // Instanciando a fala
+                // Se o valor gerado for menor que 50, então escolhe a primeira frase 
+                if (randomFala < 50) {
+                    fala = champArray[randomChamp].split("_")[1];
+                // Caso contrário, escolhe a segunda    
+                }else{
+                    fala = champArray[randomChamp].split("_")[2];
+                }
+                
+                // Instanciando o campeão
+                champ = champArray[randomChamp].split("_")[0];
 
-                // Instanciando a fala e o campeão em diferentes variáveis
-                fala = champArray[randomIndex].split("_")[1];
-                champ = champArray[randomIndex].split("_")[0].replace("~", " ");
-
-                // Printa no console a o campeão e a fala que foram retornados pelo index aleatório
-                System.out.println(champ);
-                System.out.println(fala);
+                // Printa no console o campeão e a fala que foram retornados pelo index aleatório
+                System.out.println("Campeão: " + champ);
+                System.out.println("Fala: " + fala);
                 System.out.println();
             }     
 
