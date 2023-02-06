@@ -12,14 +12,14 @@ public class Main {
     public static JDA jda;
 
     // Definindo o prefixo utilizado para instanciar os comandos do bot nos canais de texto
-    public static String prefixo = "!";
+    public static String prefix = "!";
 
     public static void main(String[] args) throws LoginException{
         // Instanciando a variável como um objeto JDA, buildando o bot e ativando a intent de leitura de conteúdo de mensagens dos membros do servidor do bot.
         jda = JDABuilder.createDefault("token-do-bot").enableIntents(GatewayIntent.MESSAGE_CONTENT).build();
 
         // Definindo atributos de status do bot 
-        jda.getPresence().setStatus(OnlineStatus.ONLINE); 
+        jda.getPresence().setStatus(OnlineStatus.INVISIBLE); 
         jda.getPresence().setActivity(Activity.playing("!info")); 
 
         // Passando a classe Commands como um event listener para o JDA.
