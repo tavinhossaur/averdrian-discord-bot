@@ -1,6 +1,6 @@
 # Averdrian - Discord BOT
 
-Sou um bot que retorna uma fala de um campeão de League of Legends para você tentar descobrir de quem ela é.
+Um bot que retorna uma fala de um campeão de League of Legends ou emotes que definem ele para você tentar descobrir.
 
 ## Dependencias
 
