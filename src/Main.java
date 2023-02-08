@@ -19,7 +19,7 @@ public class Main {
         jda = JDABuilder.createDefault("token-do-bot").enableIntents(GatewayIntent.MESSAGE_CONTENT).build();
 
         // Definindo atributos de status do bot 
-        jda.getPresence().setStatus(OnlineStatus.INVISIBLE); 
+        jda.getPresence().setStatus(OnlineStatus.ONLINE); 
         jda.getPresence().setActivity(Activity.playing("!info")); 
 
         // Passando a classe Commands como um event listener para o JDA.

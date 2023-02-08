@@ -40,7 +40,7 @@ public interface Instantiators {
         // Definindo atributos do embed
         embed.setTitle(title);
         embed.setDescription(desc);
-        embed.setColor(0x8963fe);
+        embed.setColor(0x1b86c4);
 
         if (addField) embed.addField(fieldTitle, fieldDesc, false);
     
@@ -56,8 +56,9 @@ public interface Instantiators {
         int randomQuote; // index fala aleatoria
 
         // String
-        String quote; // Fala da linha do arquivo
         String champ; // Campeão da linha do arquivo
+        String quote; // Fala da linha do arquivo
+        String emote; // Emote da linha do arquivo
 
         // String array
         String[] champArray = Instantiators.getQuotesArray("src/res/data.txt");
@@ -66,21 +67,25 @@ public interface Instantiators {
         // Instancia um novo número inteiro aleatório para definir qual das duas frases será selecionada (cara ou coroa)
         randomQuote = new Random().nextInt(99);
 
+        // Instanciando o campeão
+        champ = champArray[randomChamp].split("~")[0];
+
         // Instanciando a fala
         // Se o valor gerado for menor que 50, então escolhe a primeira frase, caso contrário, a segunda
-        if (randomQuote < 50) quote = champArray[randomChamp].split("_")[1];
-        else quote = champArray[randomChamp].split("_")[2];
+        if (randomQuote < 50) quote = champArray[randomChamp].split("~")[1];
+        else quote = champArray[randomChamp].split("~")[2];
 
-        // Instanciando o campeão
-        champ = champArray[randomChamp].split("_")[0];
+        // Instanciando o emote
+        emote = champArray[randomChamp].split("~")[3];
 
-        // Printa no console o resultado do cara ou coroa, o campeão e a fala que foram retornados pelo index aleatório
+        // Printa no console o resultado do cara ou coroa, o campeão, a fala e o emote que foram retornados pelo index aleatório
         System.out.println("Cara ou coroa: " + randomQuote);
         System.out.println("Campeão: " + champ);
         System.out.println("Fala: " + quote);
+        System.out.println("Emote: " + emote);
         System.out.println();
        
-        // Retorna os dois valores
-        return new String[] { champ, quote };
+        // Retorna os valores
+        return new String[] { champ, quote, emote };
     }
 }
