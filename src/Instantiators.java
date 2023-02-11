@@ -52,7 +52,7 @@ public interface Instantiators {
     }
 
     // Retorna um campeão e uma frase aleatória
-    public static String[] getRandomChamp() {
+    public static String[] getRandomChamp(String userName) {
         // Int
         int randomChamp; // index campeao aleatório
         int randomQuote; // index fala aleatoria
@@ -81,6 +81,8 @@ public interface Instantiators {
         emote = champArray[randomChamp].split("~")[3];
 
         // Printa no console o resultado do cara ou coroa, o campeão, a fala e o emote que foram retornados pelo index aleatório
+        System.out.println("NOVA INSTÂNCIA");
+        System.out.println("Usuário: " + userName);
         System.out.println("Cara ou coroa: " + randomQuote);
         System.out.println("Campeão: " + champ);
         System.out.println("Fala: " + quote);

@@ -1,9 +1,0 @@
-Para proteção das respostas das falas, esse txt ficará vazio no repositório.
-
-Caso queira clonar o repositório e colocar os campeões e as falas nesse txt, siga o modelo:
-
-Nunu-e-Willump_Frase do Nunu e Willump.
-Jarvan-IV_Frase do Jarvan IV.
-Jinx_Frase da Jinx.
-
-Nomes compostos utilizam um hífen (-) nos espaços, e para indicar separação do nome e da frase, utilize o underscore (_).

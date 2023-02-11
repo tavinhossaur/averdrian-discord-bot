@@ -79,6 +79,7 @@ public class Commands extends ListenerAdapter implements Instantiators{
                 + "> :military_helmet: - É um soldado ou guerreiro\n"
                 + "> :levitate: - O campeão flutua ou voa\n"
                 + "> :moyai: - Ele é chad ou é uma estátua\n"
+                + "> :busts_in_silhouete: - O campeão pode se clonar\n"
                 + "> :dagger: - Adaga, espada ou arma afiada de um campeão\n"
                 + "> :pinching_hand: - O campeão é pequeno\n"
                 + "> :handshake: - O campeão possui uma parceria\n"
@@ -112,7 +113,7 @@ public class Commands extends ListenerAdapter implements Instantiators{
         if (msg[0].equalsIgnoreCase(Main.prefix + "falas")) {
             // Se já não tiver uma atividade ativa, instancia novos valores para o campeão e a fala
             if (!map.containsKey(userId)) {
-                values = Instantiators.getRandomChamp();
+                values = Instantiators.getRandomChamp(event.getAuthor().getName());
                 // Armazena o ID do usuário e a resposta da sua instância 
                 // permitindo multiplas instâncias diferentes ao mesmo tempo
                 map.put(userId, values[0]); 
@@ -141,7 +142,7 @@ public class Commands extends ListenerAdapter implements Instantiators{
         if (msg[0].equalsIgnoreCase(Main.prefix + "emotes")) {
             // Se já não tiver uma fala ativa, instancia novos valores para o campeão e os emotes
             if (!map.containsKey(userId)) {
-                values = Instantiators.getRandomChamp();
+                values = Instantiators.getRandomChamp(event.getAuthor().getName());
                 // Armazena o ID do usuário e a resposta da sua instância 
                 // permitindo multiplas instâncias diferentes ao mesmo tempo
                 map.put(userId, values[0]); 
