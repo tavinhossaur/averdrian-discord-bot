@@ -33,7 +33,7 @@ public interface Instantiators {
     }
 
     // Método para gerar embeds
-    public static EmbedBuilder setEmbed(String title, String desc, boolean addField, String fieldTitle, String fieldDesc, boolean defaultFooter) {
+    public static EmbedBuilder setEmbed(String title, String desc, boolean addField, String fieldTitle, String fieldDesc, boolean defaultFooter, String userName, String userIcon) {
 
         EmbedBuilder embed = new EmbedBuilder();
 
@@ -45,7 +45,9 @@ public interface Instantiators {
         if (addField) embed.addField(fieldTitle, fieldDesc, false);
     
         if (defaultFooter) embed.setFooter("Developed by Tavinho in Java ☕");
+        else embed.setFooter("Instanciado por " + userName, userIcon);
 
+        // Retorna o embed
         return embed;
     }
 
