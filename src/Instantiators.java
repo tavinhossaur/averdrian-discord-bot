@@ -33,14 +33,16 @@ public interface Instantiators {
     }
 
     // Método para gerar embeds
-    public static EmbedBuilder setEmbed(String title, String desc, boolean addField, String fieldTitle, String fieldDesc, boolean defaultFooter, String userName, String userIcon) {
+    public static EmbedBuilder setEmbed(boolean addThumb, String thumbUrl, String title, String desc, boolean addField, String fieldTitle, String fieldDesc, boolean defaultFooter, String userName, String userIcon) {
 
         EmbedBuilder embed = new EmbedBuilder();
 
         // Definindo atributos do embed
         embed.setTitle(title);
         embed.setDescription(desc);
-        embed.setColor(0x1b86c4);
+        embed.setColor(0x18db1f);
+
+        if (addThumb) embed.setThumbnail(thumbUrl);
 
         if (addField) embed.addField(fieldTitle, fieldDesc, false);
     
