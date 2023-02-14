@@ -8,5 +8,5 @@ Para rodar o bot, é necessário utilizar a API JDA para desenvolvimento de bots
 - Link para o JDA: https://github.com/DV8FromTheWorld/JDA
 
 ### Screenshots
-![image](https://user-images.githubusercontent.com/64261696/217400131-5f952f7d-9322-4365-8a81-94f590263e33.png)
-![image](https://user-images.githubusercontent.com/64261696/217401306-feba740d-4e02-4d3a-9ed8-9c5e7e7e6ca8.png)
+![image](https://user-images.githubusercontent.com/64261696/218610837-ae9e1305-1fe1-45f6-8dfb-e5b521f05793.png)
+![image](https://user-images.githubusercontent.com/64261696/218610698-391c7d2c-c790-45c2-8c5b-28799f93f9de.png)
