@@ -199,7 +199,7 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
                 } else {
                     // Exibe uma mensagem para guiar o usuário na desativação da fala anterior.
                     event.reply("").flatMap(v -> event.getHook().editOriginal("**Já há uma atividade para você jogar " + event.getUser().getAsMention() + "!, verifique se ela está nesse ou em outros canais ou servidores.**" + 
-                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/setoff`")).queue();
+                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/stop`")).queue();
                 } } break;
             
             // COMANDO PARA ATIVAR A ATIVIDADE EMOTES
@@ -230,7 +230,7 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
                 } else {
                     // Exibe uma mensagem para guiar o usuário na desativação da fala anterior.
                     event.reply("").flatMap(v -> event.getHook().editOriginal("**Já há uma atividade para você jogar " + event.getUser().getAsMention() + "!, verifique se ela está nesse ou em outros canais ou servidores.**" + 
-                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/setoff`")).queue();
+                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/stop`")).queue();
                 } } break;  
 
             default: break;
