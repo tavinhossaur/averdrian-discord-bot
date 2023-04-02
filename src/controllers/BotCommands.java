@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
 // Classe comandos extende a classe da API JDA "ListenerAdapter" e implementa a classe Instantiators
-public class BotCommands extends ListenerAdapter implements Instantiators{
+public class BotCommands extends ListenerAdapter implements BotInstantiators{
 
     // Strings
     String linha; // Linha do arquivo campeoes.txt
@@ -27,8 +27,8 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
         if (msg[0].equalsIgnoreCase(map.get(event.getAuthor().getId())) && !event.getMessage().getAuthor().isBot()) {
             // Confirmação de acerto
             event.getChannel().sendMessageEmbeds(
-                Instantiators.setEmbed(
-                    false, 
+                BotInstantiators.setEmbed(
+                    false,
                     "", 
                     " :sparkles: Parabéns " + event.getAuthor().getName() + "!", 
                     "Você acertou!\nCampeão: " + "**" + map.get(event.getAuthor().getId()) + "**", 
@@ -38,7 +38,7 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
                     true, 
                     "", 
                     "")
-                .build()).queue();;
+                .build()).queue();
 
             // Remove o ID do usuário e o campeão do Hash de instâncias
             System.out.println("Encerrado\n> ID: " + event.getAuthor().getId() + "\n> Campeão: " + map.get(event.getAuthor().getId()));
@@ -71,7 +71,7 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
             case "info": {
                 // Exibe o embed
                 event.deferReply().addEmbeds(
-                    Instantiators.setEmbed(
+                    BotInstantiators.setEmbed(
                     true,
                     event.getGuild().getSelfMember().getUser().getAvatarUrl(),
                     "Averdrian", 
@@ -96,7 +96,7 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
             case "cmds": {
                 // Exibe o embed
                 event.deferReply().addEmbeds(
-                    Instantiators.setEmbed(
+                    BotInstantiators.setEmbed(
                     false,
                     "",
                     "Averdrian - Interações", 
@@ -124,7 +124,7 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
             case "emoteinfo": {
                 // Exibe o embed
                 event.deferReply().addEmbeds(
-                    Instantiators.setEmbed(
+                    BotInstantiators.setEmbed(
                     false,
                     "",
                     "Averdrian - Emotes", 
@@ -177,14 +177,14 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
             case "falas": {
                 // Se já não tiver uma atividade ativa, instancia novos valores para o campeão e a fala
                 if (!map.containsKey(userId)) {
-                    values = Instantiators.getRandomChamp(event.getUser().getName());
+                    values = BotInstantiators.getRandomChamp(event.getUser().getName());
                     // Armazena o ID do usuário e a resposta da sua instância 
                     // permitindo multiplas instâncias diferentes ao mesmo tempo
                     map.put(userId, values[0]); 
 
                     // Exibe o embed
                     event.deferReply().addEmbeds(
-                        Instantiators.setEmbed(
+                        BotInstantiators.setEmbed(
                         false,
                         "",
                         "Que campeão fala isso? :thinking:", 
@@ -199,25 +199,25 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
                 } else {
                     // Exibe uma mensagem para guiar o usuário na desativação da fala anterior.
                     event.reply("").flatMap(v -> event.getHook().editOriginal("**Já há uma atividade para você jogar " + event.getUser().getAsMention() + "!, verifique se ela está nesse ou em outros canais ou servidores.**" + 
-                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/setoff`")).queue();
+                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/stop`")).queue();
                 } } break;
             
             // COMANDO PARA ATIVAR A ATIVIDADE EMOTES
             case "emotes": {
                 // Se já não tiver uma fala ativa, instancia novos valores para o campeão e os emotes
                 if (!map.containsKey(userId)) {
-                    values = Instantiators.getRandomChamp(event.getUser().getName());
+                    values = BotInstantiators.getRandomChamp(event.getUser().getName());
                     // Armazena o ID do usuário e a resposta da sua instância 
                     // permitindo multiplas instâncias diferentes ao mesmo tempo
                     map.put(userId, values[0]); 
         
                     // Exibe o embed
                     event.deferReply().addEmbeds(
-                        Instantiators.setEmbed(
+                        BotInstantiators.setEmbed(
                         false,
                         "",
                         "Que campeão é esse? :thinking:", 
-                        "",
+                        values[2],
                         false,
                         "",
                         "",
@@ -226,11 +226,10 @@ public class BotCommands extends ListenerAdapter implements Instantiators{
                         event.getUser().getAvatarUrl())
                         .build()).queue();
 
-                    event.getChannel().sendMessage(values[2]).queue();
                 } else {
                     // Exibe uma mensagem para guiar o usuário na desativação da fala anterior.
                     event.reply("").flatMap(v -> event.getHook().editOriginal("**Já há uma atividade para você jogar " + event.getUser().getAsMention() + "!, verifique se ela está nesse ou em outros canais ou servidores.**" + 
-                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/setoff`")).queue();
+                    "\n\nSe deseja trocar a atividade, ou reiniciá-la, utilize o comando `/stop`")).queue();
                 } } break;  
 
             default: break;

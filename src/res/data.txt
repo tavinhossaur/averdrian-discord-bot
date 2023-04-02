@@ -1,9 +1,0 @@
-Para proteção das respostas, as frases e os campeões não serão mostradas no repositório
-
-Se você deseja clonar o repositório, utilize o exemplo a seguir para utilizar essa lista:
-
-Nunu-e-Willump~Frase do Nunu e Willump.~Frase 2 do Nunu e Willump.~:emote1: :emote2: 
-Jarvan-IV~Frase do Jarvan IV.~Frase 2 do Jarvan IV.~:emote1: :emote2:
-Jinx~Frase da Jinx.~Frase 2 da Jinx.~:emote1: :emote2:
-
-Em nomes compostos, utilize hífen (-) no lugar dos espaços e para separar o campeão, frases e emotes, utilize o til (~).

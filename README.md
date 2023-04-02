@@ -5,8 +5,12 @@ Um bot que retorna uma fala de um campeão de League of Legends ou emotes que de
 ## Dependencias
 
 Para rodar o bot, é necessário utilizar a API JDA para desenvolvimento de bots de Discord em Java.
-- Link para o JDA: https://github.com/DV8FromTheWorld/JDA
+
+- Link para o JDA: <https://github.com/DV8FromTheWorld/JDA>
+
+O bot é alimentado por uma API criada por mim que gera um json dataset no qual o projeto retorna e trata os dados. Você pode simplesmente fazer um arquivo .txt e alimentar o bot também, se preferir.
 
 ### Screenshots
+
 ![image](https://user-images.githubusercontent.com/64261696/218610837-ae9e1305-1fe1-45f6-8dfb-e5b521f05793.png)
 ![image](https://user-images.githubusercontent.com/64261696/218610698-391c7d2c-c790-45c2-8c5b-28799f93f9de.png)
